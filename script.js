@@ -1,30 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const messageForm = document.getElementById('messageForm');
-    const messagesDiv = document.getElementById('messages');
+const messageInput = document.getElementById('message-input');
+const sendButton = document.getElementById('send-button');
+const messagesContainer = document.getElementById('messages');
 
-    messageForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const usernameInput = document.getElementById('username');
-        const messageInput = document.getElementById('messageInput');
+// Simulate a backend server for message handling
+let messages = [];
 
-        if (usernameInput.value.trim() && messageInput.value.trim()) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message');
+// Function to add a message to the chat
+function addMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('chat-message');
+    messageElement.textContent = message;
+    messagesContainer.appendChild(messageElement);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+}
 
-            const usernameElement = document.createElement('span');
-            usernameElement.classList.add('username');
-            usernameElement.textContent = usernameInput.value.trim();
+// Send message button click event
+sendButton.addEventListener('click', () => {
+    const message = messageInput.value.trim();
+    if (message) {
+        addMessage('You: ' + message); // Simulate user message
+        messages.push({ sender: 'You', content: message }); // Store message for future use (e.g., backend integration)
+        messageInput.value = ''; // Clear input field
 
-            const textElement = document.createElement('span');
-            textElement.classList.add('text');
-            textElement.textContent = messageInput.value.trim();
-
-            messageElement.appendChild(usernameElement);
-            messageElement.appendChild(textElement);
-            messagesDiv.appendChild(messageElement);
-
-            messageInput.value = '';
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
-    });
+        // Simulate a response from the "other user"
+        setTimeout(() => {
+            addMessage('Bot: Hello there!');
+        }, 500);
+    }
 });

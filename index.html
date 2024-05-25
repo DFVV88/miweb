@@ -1,31 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat para Estudiantes</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Live Chat</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Chat para Estudiantes</h1>
-    </header>
-    <main>
-        <section id="chatContainer">
-            <div id="chatWindow">
-                <div id="messages"></div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>Live Chat</h3>
+        </div>
+        <div class="chat-messages" id="messages">
             </div>
-            <form id="messageForm">
-                <input type="text" id="username" placeholder="Nombre" required>
-                <input type="text" id="messageInput" placeholder="Escribe tu mensaje" required>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Enter your message">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
 
 
 
