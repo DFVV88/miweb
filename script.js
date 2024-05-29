@@ -1,30 +1,15 @@
-const messageInput = document.getElementById('message-input');
-const sendButton = document.getElementById('send-button');
-const messagesContainer = document.getElementById('messages');
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-// Simulate a backend server for message handling
-let messages = [];
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-// Function to add a message to the chat
-function addMessage(message) {
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('chat-message');
-    messageElement.textContent = message;
-    messagesContainer.appendChild(messageElement);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
-}
-
-// Send message button click event
-sendButton.addEventListener('click', () => {
-    const message = messageInput.value.trim();
-    if (message) {
-        addMessage('You: ' + message); // Simulate user message
-        messages.push({ sender: 'You', content: message }); // Store message for future use (e.g., backend integration)
-        messageInput.value = ''; // Clear input field
-
-        // Simulate a response from the "other user"
-        setTimeout(() => {
-            addMessage('Bot: Hello there!');
-        }, 500);
+    if (name && email && message) {
+        alert(`Gracias por tu mensaje, ${name}. Nos pondremos en contacto contigo pronto.`);
+        document.getElementById('contact-form').reset();
+    } else {
+        alert('Por favor, completa todos los campos del formulario.');
     }
 });
+

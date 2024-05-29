@@ -1,27 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Chat</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Nostradamus Los Especialistas UNI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <h3>Live Chat</h3>
-        </div>
-        <div class="chat-messages" id="messages">
-            </div>
-        <div class="chat-input">
-            <input type="text" id="message-input" placeholder="Enter your message">
-            <button id="send-button">Send</button>
-        </div>
-    </div>
+    <header>
+        <h1>Nostradamus Los Especialistas UNI</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#members">Miembros</a></li>
+                <li><a href="#events">Eventos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <script src="script.js"></script>
+    <section id="about">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos un grupo de estudio dedicado a la investigación y desarrollo en diversas áreas del conocimiento.</p>
+        <img src="images/about.jpg" alt="Sobre Nosotros">
+    </section>
+
+    <section id="members">
+        <h2>Miembros</h2>
+        <div class="member">
+            <img src="images/member1.jpg" alt="Miembro 1">
+            <p>Miembro 1</p>
+        </div>
+        <div class="member">
+            <img src="images/member2.jpg" alt="Miembro 2">
+            <p>Miembro 2</p>
+        </div>
+        <div class="member">
+            <img src="images/member3.jpg" alt="Miembro 3">
+            <p>Miembro 3</p>
+        </div>
+    </section>
+
+    <section id="events">
+        <h2>Eventos</h2>
+        <ul>
+            <li>
+                <img src="images/event1.jpg" alt="Evento 1">
+                <p>Evento 1 - Fecha</p>
+            </li>
+            <li>
+                <img src="images/event2.jpg" alt="Evento 2">
+                <p>Evento 2 - Fecha</p>
+            </li>
+            <li>
+                <img src="images/event3.jpg" alt="Evento 3">
+                <p>Evento 3 - Fecha</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contacto</h2>
+        <form id="contact-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nostradamus Los Especialistas UNI. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 
